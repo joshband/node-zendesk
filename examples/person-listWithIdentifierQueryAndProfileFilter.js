@@ -7,8 +7,8 @@ var client = zd.createClient({
   password:  myConfig.auth.password,
   remoteUri: myConfig.auth.remoteUri,
   cdp: true,
-  debug: true,
-  encoding: 'utf8',
+  /* debug: true,  // Uncommenting this and next line will allow for console message with full response
+  encoding: 'utf8',*/
   disableGlobalState: true
 });
 
