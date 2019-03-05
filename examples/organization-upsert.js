@@ -1,20 +1,23 @@
-var exampleConfig = require('./exampleConfig');
+var myConfigCore = require('../myConfigCore');
 var zd = require('../lib/client');
 
 var client = zd.createClient({
-  username:  exampleConfig.auth.username,
-  token:     exampleConfig.auth.token,
-  remoteUri: exampleConfig.auth.remoteUri
+  username:  myConfigCore.auth.username,
+  password:  myConfigCore.auth.password,
+  remoteUri: myConfigCore.auth.remoteUri,
+  debug: true,
+  encoding: 'utf8',
 });
 
+console.log(JSON.stringify(client, undefined, 2));
+
 var organization = {
-  "organization": {
-    "id":   35436,
-    "name": "My Organization",      
+  organization: {
+    name: "My Organization",
   }
 };
 
-client.organization.upsert(organization,  function(err, req, result) {
+client.organizations.upsert(organization,  function(err, req, result) {
   if (err) return handleError(err);
   console.log(JSON.stringify(result, null, 2, true));
 });

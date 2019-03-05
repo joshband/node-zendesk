@@ -1,11 +1,11 @@
-var myConfig = require('../myConfig');
+var myConfigSunshine = require('../myConfigSunshine');
 var fs = require('fs');
 var zd = require('../lib/client');
 
 var client = zd.createClient({
-  username:  myConfig.auth.username,
-  password:  myConfig.auth.password,
-  remoteUri: myConfig.auth.remoteUri,
+  username:  myConfigSunshine.auth.username,
+  password:  myConfigSunshine.auth.password,
+  remoteUri: myConfigSunshine.auth.remoteUri,
   cdp: true,
   debug: true,
   encoding: 'utf8',
@@ -25,7 +25,7 @@ var profile = {
    }
 }
 // console.log(JSON.stringify(client,undefined,2));
-const searchTerm = 'support:id:123';
+const searchTerm = 'NotFound:id:123';
 
 client.profiles.search(searchTerm, function (err, statusCode, body, response, res) {
   if (err) {
@@ -33,5 +33,7 @@ client.profiles.search(searchTerm, function (err, statusCode, body, response, re
     return;
   }
   console.log(`StatusCode: ${JSON.stringify(statusCode, null, 2, true)}`);
-  console.log(`Body: ${JSON.stringify(body, null, 2, true)}`);
+  console.log(`body: ${JSON.stringify(body, null, 2, true)}`);
+  console.log(`response: ${JSON.stringify(response, null, 2, true)}`);
+  console.log(`res: ${JSON.stringify(res, null, 2, true)}`);
 });

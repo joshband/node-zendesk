@@ -1,11 +1,11 @@
-var myConfig = require('../myConfig');
+var myConfigSunshine = require('../myConfigSunshine');
 var fs = require('fs');
 var zd = require('../lib/client');
 
 var client = zd.createClient({
-  username:  myConfig.auth.username,
-  password:  myConfig.auth.password,
-  remoteUri: myConfig.auth.remoteUri,
+  username:  myConfigSunshine.auth.username,
+  password:  myConfigSunshine.auth.password,
+  remoteUri: myConfigSunshine.auth.remoteUri,
   cdp: true,
   disableGlobalState: true
 });

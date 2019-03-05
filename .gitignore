@@ -5,4 +5,5 @@ node_modules
 *.ipr
 *.iws
 /.idea
-myConfig.js
+myConfigSunshine.js
+myConfigCore.js
