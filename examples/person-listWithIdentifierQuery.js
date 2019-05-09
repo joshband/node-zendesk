@@ -6,7 +6,7 @@ var client = zd.createClient({
   username:  myConfigSunshine.auth.username,
   password:  myConfigSunshine.auth.password,
   remoteUri: myConfigSunshine.auth.remoteUri,
-  cdp: true,
+  sunshine: true,
   disableGlobalState: true
 });
 

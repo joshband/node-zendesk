@@ -6,7 +6,7 @@ var client = zd.createClient({
   username:  myConfigSunshine.auth.username,
   password:  myConfigSunshine.auth.password,
   remoteUri: myConfigSunshine.auth.remoteUri,
-  cdp: true,
+  sunshine: true,
   /* debug: true,  // Uncommenting this and next line will allow for console message with full response
   encoding: 'utf8',*/
   disableGlobalState: true

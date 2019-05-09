@@ -6,28 +6,16 @@ var client = zd.createClient({
   username:  myConfigSunshine.auth.username,
   password:  myConfigSunshine.auth.password,
   remoteUri: myConfigSunshine.auth.remoteUri,
-  cdp: true,
+  sunshine: true,
   debug: true,
   encoding: 'utf8',
   disableGlobalState: true
 });
 
-var profile = {
-   "profile":{
-      "source":"support",
-      "type":"default",
-      "identifiers":{
-         "id": '123'
-      },
-      "attributes":{
-         "membership":"gold"
-      }
-   }
-}
-// console.log(JSON.stringify(client,undefined,2));
-const searchTerm = 'NotFound:id:123';
+const desiredFeature = 'identifiers.id';
+const value = '1234';
 
-client.profiles.search(searchTerm, function (err, statusCode, body, response, res) {
+client.profiles.searchByFeature(desiredFeature, value, function (err, statusCode, body, response, res) {
   if (err) {
     console.log(err);
     return;

@@ -7,12 +7,10 @@ var client = zd.createClient({
   password:  myConfigSunshine.auth.password,
   remoteUri: myConfigSunshine.auth.remoteUri,
   sunshine: true,
-  /*debug: true,
-  encoding: 'utf8',*/
+  debug: true,
+  encoding: 'utf8',
   disableGlobalState: true
 });
-
-console.log(JSON.stringify(client, undefined, 2));
 
 var profile = {
    "profile":{
@@ -26,8 +24,10 @@ var profile = {
       }
    }
 }
+// console.log(JSON.stringify(client,undefined,2));
+const identifierQuery = 'NotFound:id:123';
 
-client.profiles.createOrUpdate(profile, function (err, statusCode, body, response, res) {
+client.profiles.show(identifierQuery, function (err, statusCode, body, response, res) {
   if (err) {
     console.log(err);
     return;
