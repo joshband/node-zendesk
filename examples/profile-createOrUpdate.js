@@ -8,9 +8,9 @@ var client = zd.createClient({
   remoteUri: myConfigSunshine.auth.remoteUri,
   sunshine: true,
   disableGlobalState: true,
-  customHeaders: { // attaches below header to all API calls
-    'Z-Handle-Synchronously': true,
-  },
+  // customHeaders: { // attaches below header to all API calls
+  //   'Z-Handle-Synchronously': true,
+  // },
 });
 
 var profile = {
@@ -23,6 +23,9 @@ var profile = {
     attributes: {
       membership: "gold",
     },
+  },
+  customHeaders: { // attaches below header to all API calls
+    'Z-Handle-Synchronously': true,
   },
 };
 

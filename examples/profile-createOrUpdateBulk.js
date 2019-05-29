@@ -30,7 +30,10 @@ var profiles = {
             "favorite_color": "green"
           }
        }
-   ]
+   ],
+   customHeaders: { // attaches below header to all API calls
+     'Z-Handle-Synchronously': true,
+   },
 }
 // console.log(JSON.stringify(client,undefined,2));
 
@@ -40,4 +43,7 @@ client.profiles.createOrUpdateBulk(profiles, function (err, statusCode, body, re
     return;
   }
   console.log(`StatusCode: ${JSON.stringify(statusCode, null, 2, true)}`);
+  console.log(`body: ${JSON.stringify(body, null, 2, true)}`);
+  console.log(`response: ${JSON.stringify(response, null, 2, true)}`)
+  console.log(`res: ${JSON.stringify(res, null, 2, true)}`)
 });
