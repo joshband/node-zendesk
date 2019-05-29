@@ -7,25 +7,24 @@ var client = zd.createClient({
   password:  myConfigSunshine.auth.password,
   remoteUri: myConfigSunshine.auth.remoteUri,
   sunshine: true,
-  /*debug: true,
-  encoding: 'utf8',*/
-  disableGlobalState: true
+  disableGlobalState: true,
+  customHeaders: { // attaches below header to all API calls
+    'Z-Handle-Synchronously': true,
+  },
 });
 
-console.log(JSON.stringify(client, undefined, 2));
-
 var profile = {
-   "profile":{
-      "source":"support",
-      "type":"default",
-      "identifiers":{
-         "id": '123'
-      },
-      "attributes":{
-         "membership":"gold"
-      }
-   }
-}
+  profile: {
+    source: "support",
+    type: "default",
+    identifiers: {
+      id: '123',
+    },
+    attributes: {
+      membership: "gold",
+    },
+  },
+};
 
 client.profiles.createOrUpdate(profile, function (err, statusCode, body, response, res) {
   if (err) {
